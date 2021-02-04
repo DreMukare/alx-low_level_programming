@@ -16,7 +16,7 @@ int main(void)
 		n++;
 	}
 	hex = 97;
-	for (i = 0; i <= 6; i++)
+	for (i = 0; i <= 5; i++)
 	{
 		putchar(hex);
 		hex++;

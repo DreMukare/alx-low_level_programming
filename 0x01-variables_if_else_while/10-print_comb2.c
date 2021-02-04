@@ -7,9 +7,9 @@
 */
 int main(void)
 {
-	int num;
+	int c;
 
-	for (num = 0; num <= 99; num++)
+	for (c = 0; c <= 99; c++)
 	{
 		putchar((c / 10) + '0');
 		putchar((c % 10) + '0');
