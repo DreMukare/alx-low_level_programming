@@ -2,7 +2,7 @@
 
 /**
 * main - This is the main function
-* Description: It prints all single digit numbers followed by new line 
+* Description: It prints all single digit numbers followed by new line
 * Return: the function returns 0
 */
 int main(void)
