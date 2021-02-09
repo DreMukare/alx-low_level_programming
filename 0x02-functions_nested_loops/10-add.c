@@ -2,14 +2,14 @@
 
 /**
 * add - adds two integers and returns the result
-* @n: added to m 
+* @n: added to m
 * @m: added to n
 *
 * Return: returns result of addition of two integers
 */
 int add(int n, int m)
 {
-	int sum; 
+	int sum;
 
 	sum = n + m;
 	return (sum);
