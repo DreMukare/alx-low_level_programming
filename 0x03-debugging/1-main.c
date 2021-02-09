@@ -20,6 +20,5 @@ int main(void)
 	*}
 	*/
 	printf("Inifite loop avoided! \\o/\n");
-
 	return (0);
 }
