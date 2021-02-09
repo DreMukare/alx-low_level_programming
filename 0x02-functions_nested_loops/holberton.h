@@ -6,7 +6,7 @@ int _putchar(char c);
 /**
 * print_alphabet - prints out alphent in lowercase followed by new line
 */
-void print_alphbet(void);
+void print_alphabet(void);
 
 /**
 * print_alphabet_x10 - prints alphabet ten times followed by new line
