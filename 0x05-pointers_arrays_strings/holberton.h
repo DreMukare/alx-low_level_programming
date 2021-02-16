@@ -6,4 +6,9 @@
 */
 int _putchar(char c);
 
+/**
+* reset_to_98 - updates value of into to 9
+*/
+void reset_to_98(int *n);
+
 #endif /* HOLBERTON_H */
