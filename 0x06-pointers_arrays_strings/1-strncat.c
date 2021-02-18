@@ -2,7 +2,7 @@
 
 /**
 * _strncat - Concatenates two strings
-* @dest: to be concatenated to 
+* @dest: to be concatenated to
 * @src: to be concatenated to dest
 * @n: number of bytes
 *
