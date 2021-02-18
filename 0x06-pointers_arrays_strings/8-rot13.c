@@ -15,11 +15,12 @@ char *rot13(char *s)
 
 	while (*(s + i) != '\0')
 	{
-		for (j = 0; j <= 51; j++)
+		for (j = 0; j < 53; j++)
 		{
 			if (let[j] == s[i])
 			{
 				s[i] = let13[j];
+				break;
 			}
 		}
 		i++;
