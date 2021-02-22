@@ -6,6 +6,7 @@
 * @c: character to be located
 *
 * Return: returns pointer to first occurence of character
+* or NULL if the character is not found
 */
 char *_strchr(char *s, char c)
 {
