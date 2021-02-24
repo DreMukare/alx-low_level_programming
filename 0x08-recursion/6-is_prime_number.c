@@ -9,14 +9,16 @@
 */
 int helper(int num, int i)
 {
-	i = 1;
-
-	if (i == 1)
-		return (1);
-	if (num % i == 0)
-		return (0);
+	if (i < num)
+	{
+		if (num % i == 0)
+			return (0);
+		else
+			return (helper(num, i + 1));
+	}
 	else
-		return (helper(num, i - 1));
+		return (1);
+
 }
 
 /**
@@ -27,5 +29,8 @@ int helper(int num, int i)
 */
 int is_prime_number(int n)
 {
-	return (helper(n, 0));
+	if (n <= 1)
+		return (0);
+	else
+		return (helper(n, 2);
 }
