@@ -10,12 +10,10 @@
 */
 int helper(char *str, int i, int j)
 {
-	if (i == j)
-		return (1);
-	if (str[i] != str[j])
+	if (i < j && str[i] == s[j])
+		helper(str, i + 1, j - 1);
+	if (s[i] != s[j])
 		return (0);
-	if (i < j + 1)
-		return (helper(str, i + 1, j - 1));
 	return (1);
 }
 
@@ -27,12 +25,9 @@ int helper(char *str, int i, int j)
 */
 int is_palindrome(char *s)
 {
-	int length = 0;
+	int i = 0, j;
 
-	while (s[length] != '\0')
-		length++;
+	j = _strlen_recursion(s) - 1;
 
-	if (length == 0)
-		return (1);
-	return (helper(s, 0, length - 1));
+	return (helper(s, i, j));
 }
