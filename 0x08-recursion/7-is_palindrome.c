@@ -23,13 +23,13 @@ int _strlen_recursion(char *s)
 *
 * Return: 1 if palindrome, 0 if not
 */
-int helper(char *str, int i, int length)
+int helper(char *str, int i, int j)
 {
-	if (str[i] == str[length / 2])
+	if (i >= j)
 		return (1);
-	if (str[i] != str[length - i - 1])
-		return (check_palindrome(str, i + 1, length);
-	return (0);
+	if (str[i] != str[j])
+		return (0);
+	return (helper(str, i + 1, j - 1));
 }
 
 /**
@@ -40,11 +40,11 @@ int helper(char *str, int i, int length)
 */
 int is_palindrome(char *s)
 {
-	int i = 0, j;
+	int i = 0;
 
-	j = _strlen_recursion(s);
+	i = _strlen_recursion(s) - 1;
 
 	if (!*s)
 		return (1);
-	return (helper(s, i, j));
+	return (helper(s, 0, i));
 }
