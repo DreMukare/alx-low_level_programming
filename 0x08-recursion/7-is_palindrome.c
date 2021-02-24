@@ -28,7 +28,7 @@ int helper(char *str, int i, int length)
 	if (str[i] == str[length / 2])
 		return (1);
 	if (str[i] != str[length - i - 1])
-		return (check_palindrome(s, i + 1, length);
+		return (check_palindrome(str, i + 1, length);
 	return (0);
 }
 
@@ -46,5 +46,5 @@ int is_palindrome(char *s)
 
 	if (!*s)
 		return (1);
-	return (helper(s, j, i));
+	return (helper(s, i, j));
 }
