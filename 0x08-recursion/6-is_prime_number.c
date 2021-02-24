@@ -3,6 +3,7 @@
 /**
 * helper - checks whether num is prime number
 * @num: to be checked
+* @i: integer
 *
 * Return: 1 if prime number, 0 if not
 */
@@ -15,7 +16,7 @@ int helper(int num, int i)
 	if (num % i == 0)
 		return (0);
 	else
-		return helper(num, i - 1);
+		return (helper(num, i - 1));
 }
 
 /**
