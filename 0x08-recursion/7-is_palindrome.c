@@ -12,7 +12,7 @@ int helper(char *str, int i, int j)
 {
 	if (i < j && str[i] == s[j])
 		helper(str, i + 1, j - 1);
-	if (s[i] != s[j])
+	if (str[i] != str[j])
 		return (0);
 	return (1);
 }
