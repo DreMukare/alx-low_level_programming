@@ -1,6 +1,21 @@
 #include "holberton.h"
 
 /**
+* _strlen_recursion - returns the length of string
+* @s: string whose length is to be returned
+*
+* Return: length of s
+*/
+int _strlen_recursion(char *s)
+{
+	int length = 1;
+
+	if (*s == '\0')
+		return (0);
+	return (length + _strlen_recursion(s + length));
+}
+
+/**
 * helper - check whther palindrome or not
 * @str: string to check
 * @i: beginning of string
@@ -10,7 +25,7 @@
 */
 int helper(char *str, int i, int j)
 {
-	if (i < j && str[i] == s[j])
+	if (i < j && str[i] == str[j])
 		helper(str, i + 1, j - 1);
 	if (str[i] != str[j])
 		return (0);
