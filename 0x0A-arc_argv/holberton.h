@@ -6,4 +6,9 @@
 */
 int _putchar(char c);
 
+/**
+* print_name - prints the name of the program
+*/
+void print_name(char *s);
+
 #endif /* HOLBERTON_H */
