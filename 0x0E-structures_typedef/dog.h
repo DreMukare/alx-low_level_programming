@@ -17,9 +17,9 @@ struct dog
 /**
 * dog_t - type def for struct dog
 */
-typedef struct dog dog_t
+typedef struct dog dog_t;
 
-int _putchar(char c);
+int _putchar(char);
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 
