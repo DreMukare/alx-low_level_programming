@@ -45,6 +45,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	for (count = 0; count < j; count++)
 		(*d).owner[count] = owner[count];
-	
+
 	return (d);
 }
