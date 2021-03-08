@@ -5,7 +5,7 @@
 * @d: pointer to variable
 * @name: pointer to name
 * @age: age of dog
-* @owner: owner of dog
+* @owner: pointer to owner of dog
 *
 * Returns: no return
 */
