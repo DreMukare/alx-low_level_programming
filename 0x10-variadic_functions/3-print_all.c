@@ -27,11 +27,11 @@ void print_all(const char * const format, ...)
 			case 'f':
 				printf("%f", (float)va_arg(stuff, double));
 				break;
-			cause 's':
-				str = va_arg(args, char *);
-				if (!str)
-					str = "(nil)";
-				printf("%s", str);
+			case 's':
+				s = va_arg(stuff, char *);
+				if (!s)
+					s = "(nil)";
+				printf("%s", s);
 				break;
 			default:
 				continue;
@@ -40,5 +40,5 @@ void print_all(const char * const format, ...)
 			printf(", ");
 	}
 	printf("\n");
-	va_end(args);
+	va_end(stuff);
 }
