@@ -27,13 +27,13 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *end_node, *new_node;
 
-	end_node = malloc(sizeof(struct list_s));
-	if (end_node == NULL)
+	new_node = malloc(sizeof(struct list_s));
+	if (new_node == NULL)
 		return (NULL);
 
-	end_node->str = strdup(str);
-	end_node->len = _strlen(str);
-	end_node->next = NULL;
+	new_node->str = strdup(str);
+	new_node->len = _strlen(str);
+	new_node->next = NULL;
 
 	if (*head == NULL)
 		*head = new_node;
