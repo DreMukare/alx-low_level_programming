@@ -1,5 +1,7 @@
 #include "lists.h"
 
+#pragma startup print_before
+
 /**
 * print_before - prints string before main function
 * Return: no return
