@@ -10,14 +10,11 @@ size_t listint_len(const listin_t *h)
 {
 	size_t count = 0;
 
-	if (h -> next)
+	while (h)
 	{
-		while (h -> next != '\0')
-		{
-			printf("%d\n", h -> n);
-			count++;
-			h = h -> next;
-		}
+		printf("%u\n", h -> n);
+		h = h -> next;
+		count++;
 	}
 	return (count);
 }
