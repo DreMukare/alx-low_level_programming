@@ -12,10 +12,10 @@ int main (int ac, char **av)
 {
 	if (ac != 3)
 	{
-		dprint(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(98);
 	}
-	copy_func(av[0], av[1]);
+	copy_func(av[1], av[2]);
 
 	return (0);
 }
@@ -43,9 +43,9 @@ void copy_func(char *file_from, char *file_to)
 		exit(98);
 	}
 
-	fd_to = open(file_to, O_CREAT | O_WRITE | O_TRUNC, 0664);
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	written_to = write(fd_to, file_from, read_from);
+	written_to = write(fd_to, (const void *)buf, read_from);
 
 	if (fd_to == -1 || written_to == -1)
 	{
