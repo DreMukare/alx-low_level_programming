@@ -10,7 +10,7 @@
 */
 int main(int ac, char **av)
 {
-	int fd_from, fd_to, close1, close2, read_from;
+	int fd_from, fd_to, read_from;
 	char buf[BUFSIZ];
 
 	if (ac != 3)
@@ -33,12 +33,10 @@ int main(int ac, char **av)
 	if (read_from == -1)
 		dprintf(STDERR_FILENO, "Error; Can't read from %s\n", av[1]), exit(98);
 
-	close1 = close(fd_from);
-	if (close1 == -1)
+	if ((close(fd_from)) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from), exit(100);
 
-	close2 = close(fd_to);
-	if (close2 == -1)
+	if ((close(fd_to)) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to), exit(100);
 
 	return (0);
