@@ -30,14 +30,12 @@ int main (int ac, char **av)
 void copy_func(char *file_from, char *file_to)
 {
 	int fd_from, fd_to;
-	char *buf = malloc(sizeof(char) * 1024);
+	char buf[BUFSIZ];
 	ssize_t read_from, written_to;
 
-	fd_from = open(file_from, O_RDONLY | O_TRUNC, 0664);
+	fd_from = open(file_from, O_RDONLY);
 
-	read_from = read(fd_from, (void *)buf, 1024);
-
-	if (!file_from || fd_from == -1 || read_from == -1)
+	if (!file_from || fd_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
 		exit(98);
@@ -45,15 +43,21 @@ void copy_func(char *file_from, char *file_to)
 
 	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	written_to = write(fd_to, (const void *)buf, read_from);
-
-	if (fd_to == -1 || written_to == -1)
+	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 
-	free(buf);
+	while ((read_from = read(fd_to, buf, BUFSIZ)) > 0)
+	{
+		written_to = write(fd_from, buf, read_from);
+		if (written_to != read_from)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			exit(99);
+		}
+	}
 
 	if (close(fd_from) == -1)
 	{
