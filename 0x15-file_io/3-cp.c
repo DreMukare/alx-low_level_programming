@@ -11,7 +11,7 @@
 int main(int ac, char **av)
 {
 	int fd_from, fd_to, read_from;
-	char buf[BUFSIZ];
+	char buf[1024];
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -22,7 +22,7 @@ int main(int ac, char **av)
 
 	fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-	while ((read_from = read(fd_from, buf, BUFSIZ)) > 0)
+	while ((read_from = read(fd_from, buf, 1024)) > 0)
 	{
 		if (fd_to < 0 || (write(fd_to, buf, read_from) != read_from))
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
