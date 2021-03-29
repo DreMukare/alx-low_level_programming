@@ -26,7 +26,7 @@ int main(int ac, char **av)
 
 	while ((read_from = read(fd_from, buf, BUFSIZ)) > 0)
 	{
-		if (fd_to < 0 || (write(fd_to, buffer, read_from) != read_from))
+		if (fd_to < 0 || (write(fd_to, buf, read_from) != read_from))
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 
