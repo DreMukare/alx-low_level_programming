@@ -10,9 +10,8 @@
 */
 int main(int ac, char **av)
 {
-	int fd_from, fd_to, close1, close2;
+	int fd_from, fd_to, close1, close2, read_from;
 	char buf[BUFSIZ];
-	ssize_t read_from, written_to;
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
