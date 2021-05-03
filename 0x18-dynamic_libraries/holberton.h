@@ -1,7 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
-#include <stdlib.h>
 #include <stdio.h>
 
 int _putchar(char c);
@@ -25,4 +24,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-#endif /* HHOLBERTON_H */
+#endif /* HOLBERTON_H */
