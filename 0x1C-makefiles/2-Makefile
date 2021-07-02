@@ -1,0 +1,9 @@
+all : holberton
+.PHONY : all
+CC=gcc
+SRC=main.c holberton.c
+OBJ=main.o holberton.o
+NAME=holberton
+
+holberton : $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
