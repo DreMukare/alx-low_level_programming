@@ -1,4 +1,3 @@
-.PHONY : clean oclean fclean re
 CC=gcc
 SRC=main.c holberton.c
 OBJ=$(SRC:%.c=%.o)
@@ -11,11 +10,12 @@ RM=rm -f
 all : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
+.PHONY : clean oclean fclean re
 clean :
 	$(RM) $(wildcard *~)
 
 oclean :
-	$(RM) $(wildcard *.o)
+	$(RM) $(OBJ)
 
 fclean :
 	$(RM) $(wildcard *~) $(wildcard *.o) $(NAME)	
