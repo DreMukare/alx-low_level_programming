@@ -1,8 +1,11 @@
 all : holberton
 CC=gcc
 SRC=main.c holberton.c
-OBJ=$(wildcard *.o)
+OBJ=$(SRC:%.c=%.o)
 NAME=holberton
+
+%.o : %.c m.h
+	$(CC) -c -o $@ $<
 
 holberton : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
