@@ -1,0 +1,21 @@
+all : holberton
+.PHONY : all clean oclean fclean re
+CC=gcc
+SRC=main.c holberton.c
+OBJ=main.o holberton.o
+NAME=holberton
+RM=rm -f
+
+holberton : $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean :
+	$(RM) $(wildcard *~)
+
+oclean :
+	$(RM) $(wildcard *.o)
+
+fclean :
+	$(RM) $(wildcard *~) $(wildcard *.o) $(NAME)	
+
+re : oclean holberton
